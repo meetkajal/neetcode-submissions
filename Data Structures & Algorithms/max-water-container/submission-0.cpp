@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int maxArea(vector<int>& arr) {
+
+         int left=0;
+	 
+	 int right=arr.size()-1;
+	 
+	 int res=0;
+	 
+	 while(left<right){
+		 
+		 int Max=min(arr[left],arr[right])*(right-left);
+		 
+		 res=max(Max, res);
+		 
+		 if(arr[left]<arr[right]){
+			 
+			 left+=1;
+		 }
+		 else{
+			 right-=1;
+		 }
+		 
+		 
+	 }
+	 return res;
+	 
+	
+        
+    }
+};
